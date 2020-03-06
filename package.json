@@ -1,0 +1,44 @@
+{
+  "name": "@totalpave/object",
+  "version": "0.0.4-dev",
+  "description": "Object library",
+  "main": "lib/api.js",
+  "types": "lib/api.d.ts",
+  "scripts": {
+    "lint": "node --max_old_space_size=6144 ./node_modules/eslint/bin/eslint.js --ext .ts '?(src|spec)/**/*.ts' --cache",
+    "build": "npm run lint && tsc",
+    "test": "npm run-script lint && nyc --reporter=lcov --reporter=text ts-node ./spec/support/jasmine.ts",
+    "build-docs": "typedoc --excludePrivate --excludeNotExported --mode file -readme ./README.md --out ./docs ./src",
+    "prepublishOnly": "npm run-script build",
+    "changelog": "auto-changelog --output CHANGELOG.md -p --release-summary --ignore-commit-pattern chore --issue-pattern '[A-Z]+-\\d+' --issue-url https://totalpave.atlassian.net/browse/{id}",
+    "version": "npm run build-docs && npm run changelog && git add CHANGELOG.md docs && git commit -m 'chore: release'",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/totalpave/object.git"
+  },
+  "author": "norman.breau@totalpave.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/totalpave/object/issues"
+  },
+  "homepage": "https://github.com/totalpave/object#readme",
+  "devDependencies": {
+    "@breautek/jasmine": "3.5.1",
+    "@totalpave/eslint-plugin": "2.3.3",
+    "@typescript-eslint/eslint-plugin": "2.22.0",
+    "@typescript-eslint/parser": "2.22.0",
+    "eslint": "6.8.0",
+    "jasmine-spec-reporter": "4.2.1",
+    "nyc": "15.0.0",
+    "ts-node": "8.6.2",
+    "tsutils": "3.17.1",
+    "typedoc": "0.16.11",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "@totalpave/interfaces": "1.0.0",
+    "@types/node": "12.12.11"
+  }
+}
