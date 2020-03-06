@@ -1,7 +1,7 @@
 {
-  "name": "@totalpave/object",
+  "name": "@totalpave/array",
   "version": "0.0.4-dev",
-  "description": "Object library",
+  "description": "Array library",
   "main": "lib/api.js",
   "types": "lib/api.d.ts",
   "scripts": {
