@@ -30,12 +30,29 @@ export class ArrayUtils {
     public static dedupe<T = any>(array: Array<T>): Array<T> {
         let t: Array<T> = [];
 
-        for (let i = 0; i < array.length; i++) {
+        for (let i: number = 0; i < array.length; i++) {
             if (t.indexOf(array[i]) === -1) {
                 t.push(array[i]);
             }
         }
 
         return t;
+    }
+
+    public static map<T extends IDictionary<any> = IDictionary<any>, K extends keyof T = keyof T>(array: Array<T>, key: K): IDictionary<T> {
+        let map: IDictionary<T> = {};
+
+        for (let i: number = 0; i < array.length; i++) {
+            let item: T = array[i];
+            let keyValue: any = item[key];
+            if (!map[keyValue]) {
+                map[keyValue] = item;
+            }
+            else {
+                throw new Error('Encountered duplicate key. Key value should be unique. Maybe you wanted to use ArrayUtils.group instead?');
+            }
+        }
+
+        return map;
     }
 }

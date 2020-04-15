@@ -151,4 +151,47 @@ describe('ArrayUtils', () => {
             })).toEqual(expectation);
         });
     });
+
+    describe('map', () => {
+        it('should convert array to map', () => {
+            let arr: Array<IDictionary<any>> = [
+                {
+                    id: 1,
+                    name: 'Test'
+                },
+                {
+                    id: 2,
+                    name: 'test2'
+                }
+            ];
+
+            expect(ArrayUtils.map(arr, 'id')).toEqual({
+                1: {
+                    id: 1,
+                    name: 'Test'
+                },
+                2: {
+                    id: 2,
+                    name: 'test2'
+                }
+            });
+        });
+
+        it('should error if there are duplicate keys', () => {
+            let arr: Array<IDictionary<any>> = [
+                {
+                    id: 1,
+                    name: 'Test'
+                },
+                {
+                    id: 1,
+                    name: 'test2'
+                }
+            ];
+
+            expect(() => {
+                ArrayUtils.map(arr, 'id');
+            }).toThrowError(/Encountered duplicate key/);
+        });
+    });
 });
