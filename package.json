@@ -27,6 +27,7 @@
   "devDependencies": {
     "@breautek/jasmine": "3.5.1",
     "@totalpave/eslint-plugin": "2.3.3",
+    "@types/jasmine": "3.5.10",
     "@typescript-eslint/eslint-plugin": "2.22.0",
     "@typescript-eslint/parser": "2.22.0",
     "auto-changelog": "1.16.2",
