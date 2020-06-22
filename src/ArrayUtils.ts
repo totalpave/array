@@ -57,7 +57,7 @@ export class ArrayUtils {
             let keyValue: any = item[key];
 
             if (typeof keyValue === 'function') {
-                keyValue = keyValue();
+                keyValue = item[key]();
             }
 
             if (!map[keyValue]) {
