@@ -39,12 +39,27 @@ export class ArrayUtils {
         return t;
     }
 
+    /**
+     * Returns an `IDictionary<T>` object keyed by the supplied key parameter.
+     * 
+     * If the key value is a function, the function will be invoked with no parameters.
+     * It will be expected that the function will return an indexable value, such as a
+     * string or a number.
+     * 
+     * @param array 
+     * @param key 
+     */
     public static map<T extends IDictionary<any> = IDictionary<any>, K extends keyof T = keyof T>(array: Array<T>, key: K): IDictionary<T> {
         let map: IDictionary<T> = {};
 
         for (let i: number = 0; i < array.length; i++) {
             let item: T = array[i];
             let keyValue: any = item[key];
+
+            if (typeof keyValue === 'function') {
+                keyValue = keyValue();
+            }
+
             if (!map[keyValue]) {
                 map[keyValue] = item;
             }

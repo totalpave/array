@@ -177,6 +177,34 @@ describe('ArrayUtils', () => {
             });
         });
 
+        it('should call function if key value is function', () => {
+            let arr: Array<IDictionary<any>> = [
+                {
+                    getID: function() {
+                        return 1;
+                    },
+                    name: 'Test'
+                },
+                {
+                    getID: function() {
+                        return 2;
+                    },
+                    name: 'test2'
+                }
+            ];
+
+            expect(ArrayUtils.map(arr, 'getID')).toEqual({
+                1: {
+                    getID: jasmine.any(Function),
+                    name: 'Test'
+                },
+                2: {
+                    getID: jasmine.any(Function),
+                    name: 'test2'
+                }
+            });
+        })
+
         it('should error if there are duplicate keys', () => {
             let arr: Array<IDictionary<any>> = [
                 {
