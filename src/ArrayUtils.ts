@@ -1,5 +1,22 @@
 import { IDictionary } from '@totalpave/interfaces';
 
+export interface IArrayDiff<T = any> {
+    /**
+     * Items that only appear in the left array
+     */
+    left: Array<T>;
+
+    /**
+     * Items that appear in both arrays
+     */
+    bilateral: Array<T>;
+
+    /**
+     * Items that only appear in the right array
+     */
+    right: Array<T>;
+}
+
 export class ArrayUtils {
     public static numericalSort(array: Array<number>, descending?: boolean): Array<number> {
         let output: Array<number> = array.slice();
@@ -69,5 +86,68 @@ export class ArrayUtils {
         }
 
         return map;
+    }
+
+    /**
+     * Analyzes the differences between two arrays. Outputs an object {left, bilateral, right}
+     * 
+     * `left` output are items that are exclusive to the left array. 
+     * `right` output are items that are exclusive to the right array.
+     * `bilateral` output are items that exist in both arrays.
+     * 
+     * @example
+     * ```
+     *      let left  = [1, 2, 3, 4, 5, 6];
+     *      let right = [4, 5, 6, 7, 8, 9];
+     * 
+     *      let diff = ArrayUtils.diff(left, right);
+     *      // diff = {
+     *      //     left: [1, 2, 3],
+     *      //     bilateral: [4, 5, 6],
+     *      //     right: [7, 8, 9]
+     *      // }
+     * ```
+     * 
+     * @param left 
+     * @param right 
+     */
+    public static diff<T = any>(left: Array<T>, right: Array<T>): IArrayDiff {
+        let leftUnique: Array<T> = [];
+        let rightUnique: Array<T> = [];
+        let bilateral: Array<T> = [];
+
+        for (let i: number = 0; i < left.length; i++) {
+            let value: T = left[i];
+            if (right.indexOf(value) > -1) {
+                if (bilateral.indexOf(value) === -1) {
+                    bilateral.push(value);
+                }
+            }
+            else {
+                if (leftUnique.indexOf(value) === -1) {
+                    leftUnique.push(value);
+                }
+            }
+        }
+
+        for (let i: number = 0; i < right.length; i++) {
+            let value: T = right[i];
+            if (left.indexOf(value) > -1) {
+                if (bilateral.indexOf(value) === -1) {
+                    bilateral.push(value);
+                }
+            }
+            else {
+                if (rightUnique.indexOf(value) === -1) {
+                    rightUnique.push(value);
+                }
+            }
+        }
+
+        return {
+            left: leftUnique,
+            right: rightUnique,
+            bilateral
+        };
     }
 }

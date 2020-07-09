@@ -222,4 +222,72 @@ describe('ArrayUtils', () => {
             }).toThrowError(/Encountered duplicate key/);
         });
     });
+
+    describe('diff', () => {
+        it('completely unique', () => {
+            let left: Array<number> = [
+                1,
+                2,
+                3
+            ];
+
+            let right: Array<number> = [
+                4,
+                5,
+                6
+            ];
+
+            expect(ArrayUtils.diff(left, right)).toEqual({
+                left: [
+                    1,
+                    2,
+                    3
+                ],
+                bilateral: [],
+                right: [
+                    4,
+                    5,
+                    6
+                ]
+            });
+        });
+
+        it('bilateral', () => {
+            let left: Array<number> = [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ];
+
+            let right: Array<number> = [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+            ];
+
+            expect(ArrayUtils.diff(left, right)).toEqual({
+                left: [
+                    1,
+                    2,
+                    3
+                ],
+                bilateral: [
+                    4,
+                    5,
+                    6
+                ],
+                right: [
+                    7,
+                    8,
+                    9
+                ]
+            });
+        });
+    });
 });
