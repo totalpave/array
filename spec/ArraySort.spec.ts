@@ -55,4 +55,64 @@ describe('ArraySort', () => {
         ]);
         expect(JSON.stringify(result)).toBe(expectation);
     });
+
+    describe('Bubble Sort', () => {
+        it('can sort', async () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = await sorter.bubble(array, [
+                async (a: number, b: number): Promise<number> => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+    });
+
+    describe('Bubble Sort', () => {
+        it('can sort', async () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = await sorter.bubble(array, [
+                async (a: number, b: number): Promise<number> => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+    });
+
+    describe('Insertion Sort', () => {
+        it('can sort', async () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = await sorter.insertion(array, [
+                async (a: number, b: number): Promise<number> => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+    });
+
+    describe('Merge Sort', () => {
+        it('can sort', async () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = await sorter.merge(array, [
+                async (a: number, b: number): Promise<number> => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+    });
+
+    describe('Quick Sort', () => {
+        it('can sort', async () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = await sorter.quick(array, [
+                async (a: number, b: number): Promise<number> => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+    });
 });
