@@ -66,7 +66,7 @@ export class ArrayUtils {
      * @param array 
      * @param key 
      */
-    public static map<T extends IDictionary<any> = IDictionary<any>, K extends keyof T = keyof T>(array: Array<T>, key: K): IDictionary<T> {
+    public static map<T extends IDictionary<any> = IDictionary<any>, TK extends keyof T = keyof T>(array: Array<T>, key: TK): IDictionary<T> {
         let map: IDictionary<T> = {};
 
         for (let i: number = 0; i < array.length; i++) {

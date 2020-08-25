@@ -22,8 +22,8 @@ export class ArraySort<T> {
 
         sorted = sorted.sort((a: T, b: T): number => {
             for (let i: number = 0; i < sortFunctions.length; i++) {
-                const sortFn = sortFunctions[i];
-                const returnVal: number = sortFn(a, b);
+                let sortFn = sortFunctions[i];
+                let returnVal: number = sortFn(a, b);
                 if (returnVal !== null) {
                     return returnVal;
                 }
@@ -36,12 +36,12 @@ export class ArraySort<T> {
     }
 
     public async bubble(arr: Array<T>, sortFunctions: Array<ISortPromiseFunction<T>>): Promise<Array<T>> {
-        let swapped: boolean = false;
+        let hasSwapped: boolean = false;
 
         let array: Array<T> = arr.slice();
 
         do {
-            swapped = false;
+            hasSwapped = false;
             for (let i: number = 0; i < array.length - 1; i++) {
                 let a: T = array[i];
                 let b: T = array[i + 1];
@@ -52,11 +52,11 @@ export class ArraySort<T> {
                     if (returnVal > 0) {
                         array[i] = b;
                         array[i + 1] = a;
-                        swapped = true;
+                        hasSwapped = true;
                     }
                 }
             }
-        } while (swapped);
+        } while (hasSwapped);
 
         return array;
     }
