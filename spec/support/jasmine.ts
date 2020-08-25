@@ -1,5 +1,5 @@
 
-import Jasmine = require('@breautek/jasmine');
+import Jasmine = require('jasmine');
 import {SpecReporter} from 'jasmine-spec-reporter';
 
 let jasmine = new Jasmine(null);
