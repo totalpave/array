@@ -56,11 +56,51 @@ describe('ArraySort', () => {
         expect(JSON.stringify(result)).toBe(expectation);
     });
 
-    describe('Bubble Sort', () => {
-        it('can sort', async () => {
+    describe('Sync', () => {
+        it('Sort', () => {
             let expectation: string = '[1,2,3,5,6,10,20]';
-            let result: Array<number> = await sorter.bubble(array, [
-                async (a: number, b: number): Promise<number> => {
+            let result: Array<number> = sorter.sort(array, [
+                (a: number, b: number): number => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+
+        it('Bubble', () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = sorter.bubble(array, [
+                (a: number, b: number): number => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+
+        it('Insertion', () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = sorter.insertion(array, [
+                (a: number, b: number): number => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+
+        it('Merge', () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = sorter.merge(array, [
+                (a: number, b: number): number => {
+                    return a - b;
+                }
+            ]);
+            expect(JSON.stringify(result)).toBe(expectation);
+        });
+
+        it('Quick', () => {
+            let expectation: string = '[1,2,3,5,6,10,20]';
+            let result: Array<number> = sorter.quick(array, [
+                (a: number, b: number): number => {
                     return a - b;
                 }
             ]);
@@ -68,51 +108,65 @@ describe('ArraySort', () => {
         });
     });
 
-    describe('Bubble Sort', () => {
-        it('can sort', async () => {
-            let expectation: string = '[1,2,3,5,6,10,20]';
-            let result: Array<number> = await sorter.bubble(array, [
-                async (a: number, b: number): Promise<number> => {
-                    return a - b;
-                }
-            ]);
-            expect(JSON.stringify(result)).toBe(expectation);
+    describe('Async', () => {
+        describe('Sort', () => {
+            it('can sort', async () => {
+                let expectation: string = '[1,2,3,5,6,10,20]';
+                let result: Array<number> = await sorter.asyncSort(array, [
+                    async (a: number, b: number): Promise<number> => {
+                        return a - b;
+                    }
+                ]);
+                expect(JSON.stringify(result)).toBe(expectation);
+            });
         });
-    });
-
-    describe('Insertion Sort', () => {
-        it('can sort', async () => {
-            let expectation: string = '[1,2,3,5,6,10,20]';
-            let result: Array<number> = await sorter.insertion(array, [
-                async (a: number, b: number): Promise<number> => {
-                    return a - b;
-                }
-            ]);
-            expect(JSON.stringify(result)).toBe(expectation);
+    
+        describe('Bubble Sort', () => {
+            it('can sort', async () => {
+                let expectation: string = '[1,2,3,5,6,10,20]';
+                let result: Array<number> = await sorter.asyncBubble(array, [
+                    async (a: number, b: number): Promise<number> => {
+                        return a - b;
+                    }
+                ]);
+                expect(JSON.stringify(result)).toBe(expectation);
+            });
         });
-    });
-
-    describe('Merge Sort', () => {
-        it('can sort', async () => {
-            let expectation: string = '[1,2,3,5,6,10,20]';
-            let result: Array<number> = await sorter.merge(array, [
-                async (a: number, b: number): Promise<number> => {
-                    return a - b;
-                }
-            ]);
-            expect(JSON.stringify(result)).toBe(expectation);
+    
+        describe('Insertion Sort', () => {
+            it('can sort', async () => {
+                let expectation: string = '[1,2,3,5,6,10,20]';
+                let result: Array<number> = await sorter.asyncInsertion(array, [
+                    async (a: number, b: number): Promise<number> => {
+                        return a - b;
+                    }
+                ]);
+                expect(JSON.stringify(result)).toBe(expectation);
+            });
         });
-    });
-
-    describe('Quick Sort', () => {
-        it('can sort', async () => {
-            let expectation: string = '[1,2,3,5,6,10,20]';
-            let result: Array<number> = await sorter.quick(array, [
-                async (a: number, b: number): Promise<number> => {
-                    return a - b;
-                }
-            ]);
-            expect(JSON.stringify(result)).toBe(expectation);
+    
+        describe('Merge Sort', () => {
+            it('can sort', async () => {
+                let expectation: string = '[1,2,3,5,6,10,20]';
+                let result: Array<number> = await sorter.asyncMerge(array, [
+                    async (a: number, b: number): Promise<number> => {
+                        return a - b;
+                    }
+                ]);
+                expect(JSON.stringify(result)).toBe(expectation);
+            });
+        });
+    
+        describe('Quick Sort', () => {
+            it('can sort', async () => {
+                let expectation: string = '[1,2,3,5,6,10,20]';
+                let result: Array<number> = await sorter.asyncQuick(array, [
+                    async (a: number, b: number): Promise<number> => {
+                        return a - b;
+                    }
+                ]);
+                expect(JSON.stringify(result)).toBe(expectation);
+            });
         });
     });
 });

@@ -1,4 +1,6 @@
 
+/* eslint-disable */
+
 import * as Benchmark from 'benchmark';
 import {ArraySort} from '../src/ArraySort';
 
@@ -27,29 +29,64 @@ suite
             }
         ]);
     })
-    .add('ArraySort.bubble', async () => {
-        await sorter.bubble(array, [
+    .add('ArraySort.bubble', () => {
+        sorter.bubble(array, [
+            (a: number, b: number): number => {
+                return a - b;
+            }
+        ]);
+    })
+    .add('ArraySort.insertion', () => {
+        sorter.insertion(array, [
+            (a: number, b: number): number => {
+                return a - b;
+            }
+        ]);
+    })
+    .add('ArraySort.merge', () => {
+        sorter.merge(array, [
+            (a: number, b: number): number => {
+                return a - b;
+            }
+        ]);
+    })
+    .add('ArraySort.quick', () => {
+        sorter.quick(array, [
+            (a: number, b: number): number => {
+                return a - b;
+            }
+        ]);
+    })
+    .add('ArraySort.asyncSort', async () => {
+        await sorter.asyncSort(array, [
             async (a: number, b: number): Promise<number> => {
                 return a - b;
             }
         ]);
     })
-    .add('ArraySort.insertion', async () => {
-        await sorter.insertion(array, [
+    .add('ArraySort.asyncBubble', async () => {
+        await sorter.asyncBubble(array, [
             async (a: number, b: number): Promise<number> => {
                 return a - b;
             }
         ]);
     })
-    .add('ArraySort.merge', async () => {
-        await sorter.merge(array, [
+    .add('ArraySort.asyncInsertion', async () => {
+        await sorter.asyncInsertion(array, [
             async (a: number, b: number): Promise<number> => {
                 return a - b;
             }
         ]);
     })
-    .add('ArraySort.quick', async () => {
-        await sorter.quick(array, [
+    .add('ArraySort.asyncMerge', async () => {
+        await sorter.asyncMerge(array, [
+            async (a: number, b: number): Promise<number> => {
+                return a - b;
+            }
+        ]);
+    })
+    .add('ArraySort.asyncQuick', async () => {
+        await sorter.asyncQuick(array, [
             async (a: number, b: number): Promise<number> => {
                 return a - b;
             }
