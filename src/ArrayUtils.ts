@@ -150,4 +150,14 @@ export class ArrayUtils {
             bilateral
         };
     }
+
+    public static removeAllInstancesInList<T = any>(item: T, list: Array<T>): Array<T> {
+        list = list.slice();
+        
+        while (list.indexOf(item) > -1) {
+            list.splice(list.indexOf(item), 1);
+        }
+    
+        return list;
+    }
 }

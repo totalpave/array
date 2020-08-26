@@ -290,4 +290,22 @@ describe('ArrayUtils', () => {
             });
         });
     });
+
+    it('removeAllInstancesInList()', () => {
+        let inList: any = [
+            1,
+            2,
+            3,
+            1,
+            2,
+            3
+        ];
+        let list: any = ArrayUtils.removeAllInstancesInList(1, inList);
+        expect(inList).not.toBe(list);
+        expect(list.length).toBe(4);
+        expect(list[0]).toBe(2);
+        expect(list[1]).toBe(3);
+        expect(list[2]).toBe(2);
+        expect(list[3]).toBe(3);
+    });
 });
