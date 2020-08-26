@@ -1,5 +1,6 @@
 
 import {ArraySort} from '../src/ArraySort';
+import { SortOrder } from '../src/api';
 
 describe('ArraySort', () => {
     let array: Array<number> = [
@@ -40,16 +41,16 @@ describe('ArraySort', () => {
             },
             (a: number, b: number): number => {
                 if (a !== 2 && b !== 2) {
-                    return 0;
+                    return SortOrder.NO_CHANGE;
                 }
                 else if (a === 2) {
-                    return 1;
+                    return SortOrder.BA;
                 }
                 else if (b === 2) {
-                    return -1;
+                    return SortOrder.AB;
                 }
                 else {
-                    return 0;
+                    return SortOrder.NO_CHANGE;
                 }
             }
         ]);
