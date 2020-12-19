@@ -44,8 +44,6 @@
   },
   "dependencies": {
     "@totalpave/interfaces": "1.0.0",
-    "@types/node": "12.12.54",
-    "package-lock.json": "1.0.0",
-    "package.json": "2.0.1"
+    "@types/node": "12.12.54"
   }
 }
