@@ -93,10 +93,10 @@ export class ArraySort<T> {
         let left: Array<T> = array.slice(0, mid);
         let right: Array<T> = array.slice(mid);
 
-        return this._mergeSort(this.merge(left, sortFunctions), this.merge(right, sortFunctions), sortFunctions);
+        return this.$mergeSort(this.merge(left, sortFunctions), this.merge(right, sortFunctions), sortFunctions);
     }
 
-    private _mergeSort(left: Array<T>, right: Array<T>, sortFunctions: Array<ISortFunction<T>>): Array<T> {
+    private $mergeSort(left: Array<T>, right: Array<T>, sortFunctions: Array<ISortFunction<T>>): Array<T> {
         let sorted: Array<T> = [];
 
         while (left.length && right.length) {
@@ -218,10 +218,10 @@ export class ArraySort<T> {
         let right: Array<T> = array.slice(mid);
 
         let results: Array<Array<T>> = await Promise.all([ this.asyncMerge(left, sortFunctions), this.asyncMerge(right, sortFunctions) ]);
-        return this._asyncMergeSort(results[0], results[1], sortFunctions);
+        return this.$asyncMergeSort(results[0], results[1], sortFunctions);
     }
 
-    private async _asyncMergeSort(left: Array<T>, right: Array<T>, sortFunctions: Array<IAsyncSortFunction<T>>): Promise<Array<T>> {
+    private async $asyncMergeSort(left: Array<T>, right: Array<T>, sortFunctions: Array<IAsyncSortFunction<T>>): Promise<Array<T>> {
         let sorted: Array<T> = [];
 
         while (left.length && right.length) {
