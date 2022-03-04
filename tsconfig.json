@@ -10,13 +10,8 @@
         "noImplicitThis": true,
         "alwaysStrict": true,
         "moduleResolution": "node",
-        "baseUrl": "./",
         "plugins": [],
         "incremental": true
-    },
-    "typedocOptions": {
-        "mode": "modules",
-        "out": "docs"
     },
     "exclude": [
         "**/*.spec.ts",
@@ -25,6 +20,6 @@
         "lib",
         "spec",
         "node_modules",
-	"benchmark"
+        "benchmark"
     ]
 }

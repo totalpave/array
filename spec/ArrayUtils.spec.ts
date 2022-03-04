@@ -195,11 +195,11 @@ describe('ArrayUtils', () => {
 
             expect(ArrayUtils.map(arr, 'getID')).toEqual({
                 1: {
-                    getID: jasmine.any(Function),
+                    getID: expect.any(Function),
                     name: 'Test'
                 },
                 2: {
-                    getID: jasmine.any(Function),
+                    getID: expect.any(Function),
                     name: 'test2'
                 }
             });
