@@ -1,4 +1,4 @@
-[@totalpave/array - v3.0.0-dev](../README.md) / [Exports](../modules.md) / SortOrder
+[@totalpave/array - v3.0.0](../README.md) / [Exports](../modules.md) / SortOrder
 
 # Enumeration: SortOrder
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[SortOrder.ts:3](https://github.com/totalpave/array/blob/83c287a/src/SortOrder.ts#L3)
+[SortOrder.ts:3](https://github.com/totalpave/array/blob/4eadf03/src/SortOrder.ts#L3)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[SortOrder.ts:5](https://github.com/totalpave/array/blob/83c287a/src/SortOrder.ts#L5)
+[SortOrder.ts:5](https://github.com/totalpave/array/blob/4eadf03/src/SortOrder.ts#L5)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[SortOrder.ts:4](https://github.com/totalpave/array/blob/83c287a/src/SortOrder.ts#L4)
+[SortOrder.ts:4](https://github.com/totalpave/array/blob/4eadf03/src/SortOrder.ts#L4)

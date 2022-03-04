@@ -1,6 +1,6 @@
-[@totalpave/array - v3.0.0-dev](README.md) / Exports
+[@totalpave/array - v3.0.0](README.md) / Exports
 
-# @totalpave/array - v3.0.0-dev
+# @totalpave/array - v3.0.0
 
 ## Table of contents
 
@@ -51,7 +51,7 @@
 
 #### Defined in
 
-[ArraySort.ts:17](https://github.com/totalpave/array/blob/83c287a/src/ArraySort.ts#L17)
+[ArraySort.ts:17](https://github.com/totalpave/array/blob/4eadf03/src/ArraySort.ts#L17)
 
 ___
 
@@ -94,4 +94,4 @@ This is a class to take advantage of generic types declarations.
 
 #### Defined in
 
-[ArraySort.ts:16](https://github.com/totalpave/array/blob/83c287a/src/ArraySort.ts#L16)
+[ArraySort.ts:16](https://github.com/totalpave/array/blob/4eadf03/src/ArraySort.ts#L16)
