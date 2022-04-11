@@ -1,4 +1,4 @@
-[@totalpave/array - v3.0.0](../README.md) / [Exports](../modules.md) / IArrayDiff
+[@totalpave/array - v3.0.1](../README.md) / [Exports](../modules.md) / IArrayDiff
 
 # Interface: IArrayDiff<T\>
 
@@ -26,7 +26,7 @@ Items that appear in both arrays
 
 #### Defined in
 
-[ArrayUtils.ts:12](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L12)
+[ArrayUtils.ts:12](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L12)
 
 ___
 
@@ -38,7 +38,7 @@ Items that only appear in the left array
 
 #### Defined in
 
-[ArrayUtils.ts:7](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L7)
+[ArrayUtils.ts:7](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L7)
 
 ___
 
@@ -50,4 +50,4 @@ Items that only appear in the right array
 
 #### Defined in
 
-[ArrayUtils.ts:17](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L17)
+[ArrayUtils.ts:17](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L17)

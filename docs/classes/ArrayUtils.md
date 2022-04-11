@@ -1,4 +1,4 @@
-[@totalpave/array - v3.0.0](../README.md) / [Exports](../modules.md) / ArrayUtils
+[@totalpave/array - v3.0.1](../README.md) / [Exports](../modules.md) / ArrayUtils
 
 # Class: ArrayUtils
 
@@ -47,7 +47,7 @@
 
 #### Defined in
 
-[ArrayUtils.ts:47](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L47)
+[ArrayUtils.ts:47](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L47)
 
 ___
 
@@ -93,7 +93,7 @@ Analyzes the differences between two arrays. Outputs an object {left, bilateral,
 
 #### Defined in
 
-[ArrayUtils.ts:114](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L114)
+[ArrayUtils.ts:114](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L114)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[ArrayUtils.ts:33](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L33)
+[ArrayUtils.ts:33](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L33)
 
 ___
 
@@ -154,7 +154,7 @@ string or a number.
 
 #### Defined in
 
-[ArrayUtils.ts:69](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L69)
+[ArrayUtils.ts:69](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L69)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 #### Defined in
 
-[ArrayUtils.ts:21](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L21)
+[ArrayUtils.ts:21](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L21)
 
 ___
 
@@ -202,4 +202,4 @@ ___
 
 #### Defined in
 
-[ArrayUtils.ts:154](https://github.com/totalpave/array/blob/4eadf03/src/ArrayUtils.ts#L154)
+[ArrayUtils.ts:154](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L154)
