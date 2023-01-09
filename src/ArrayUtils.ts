@@ -1,4 +1,3 @@
-import { IDictionary } from '@totalpave/interfaces';
 
 export interface IArrayDiff<T = any> {
     /**
@@ -30,8 +29,8 @@ export class ArrayUtils {
         });
     }
 
-    public static group<T = any>(array: Array<T>, groupCallback: (value: T) => string|number): IDictionary<Array<T>> {
-        let map: IDictionary<Array<T>> = {};
+    public static group<T = any>(array: Array<T>, groupCallback: (value: T) => string|number): Record<string, Array<T>> {
+        let map: Record<string, Array<T>> = {};
         
         array.forEach((value: T) => {
             let groupByValue: string|number = groupCallback(value);
@@ -66,8 +65,8 @@ export class ArrayUtils {
      * @param array 
      * @param key 
      */
-    public static map<T extends IDictionary<any> = IDictionary<any>, TK extends keyof T = keyof T>(array: Array<T>, key: TK): IDictionary<T> {
-        let map: IDictionary<T> = {};
+    public static map<T extends Record<string, any> = Record<string, any>, TK extends keyof T = keyof T>(array: Array<T>, key: TK): Record<string, T> {
+        let map: Record<string, T> = {};
 
         for (let i: number = 0; i < array.length; i++) {
             let item: T = array[i];

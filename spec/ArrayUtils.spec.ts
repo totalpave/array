@@ -1,6 +1,5 @@
 
 import {ArrayUtils} from '../src/ArrayUtils';
-import { IDictionary } from '@totalpave/interfaces';
 
 describe('ArrayUtils', () => {
     describe('deduping', () => {
@@ -100,7 +99,7 @@ describe('ArrayUtils', () => {
             }
         ];
 
-        let expectation: IDictionary<Array<ITestData>> = {
+        let expectation: Record<string, Array<ITestData>> = {
             1: [
                 {
                     distressID: 1,
@@ -154,7 +153,7 @@ describe('ArrayUtils', () => {
 
     describe('map', () => {
         it('should convert array to map', () => {
-            let arr: Array<IDictionary<any>> = [
+            let arr: Array<Record<string, any>> = [
                 {
                     id: 1,
                     name: 'Test'
@@ -178,7 +177,7 @@ describe('ArrayUtils', () => {
         });
 
         it('should call function if key value is function', () => {
-            let arr: Array<IDictionary<any>> = [
+            let arr: Array<Record<string, any>> = [
                 {
                     getID: function() {
                         return 1;
@@ -206,7 +205,7 @@ describe('ArrayUtils', () => {
         })
 
         it('should error if there are duplicate keys', () => {
-            let arr: Array<IDictionary<any>> = [
+            let arr: Array<Record<string, any>> = [
                 {
                     id: 1,
                     name: 'Test'
