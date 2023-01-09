@@ -20,6 +20,7 @@
         "lib",
         "spec",
         "node_modules",
-        "benchmark"
+        "benchmark",
+        "jest.config.ts"
     ]
 }
