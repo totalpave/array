@@ -1,6 +1,6 @@
 {
   "name": "@totalpave/array",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Array library",
   "main": "lib/api.js",
   "types": "lib/api.d.ts",
