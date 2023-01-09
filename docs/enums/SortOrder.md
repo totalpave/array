@@ -1,41 +1,41 @@
-[@totalpave/array - v3.0.1](../README.md) / [Exports](../modules.md) / SortOrder
+[@totalpave/array - v4.0.0](../README.md) / [Exports](../modules.md) / SortOrder
 
 # Enumeration: SortOrder
 
 ## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
 - [AB](SortOrder.md#ab)
 - [BA](SortOrder.md#ba)
 - [NO\_CHANGE](SortOrder.md#no_change)
 
-## Enumeration members
+## Enumeration Members
 
 ### AB
 
-• **AB** = `-1`
+• **AB** = ``-1``
 
 #### Defined in
 
-[SortOrder.ts:3](https://github.com/totalpave/array/blob/afdff9d/src/SortOrder.ts#L3)
+[SortOrder.ts:3](https://github.com/totalpave/array/blob/507755b/src/SortOrder.ts#L3)
 
 ___
 
 ### BA
 
-• **BA** = `1`
+• **BA** = ``1``
 
 #### Defined in
 
-[SortOrder.ts:5](https://github.com/totalpave/array/blob/afdff9d/src/SortOrder.ts#L5)
+[SortOrder.ts:5](https://github.com/totalpave/array/blob/507755b/src/SortOrder.ts#L5)
 
 ___
 
 ### NO\_CHANGE
 
-• **NO\_CHANGE** = `0`
+• **NO\_CHANGE** = ``0``
 
 #### Defined in
 
-[SortOrder.ts:4](https://github.com/totalpave/array/blob/afdff9d/src/SortOrder.ts#L4)
+[SortOrder.ts:4](https://github.com/totalpave/array/blob/507755b/src/SortOrder.ts#L4)

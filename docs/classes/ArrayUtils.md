@@ -1,4 +1,4 @@
-[@totalpave/array - v3.0.1](../README.md) / [Exports](../modules.md) / ArrayUtils
+[@totalpave/array - v4.0.0](../README.md) / [Exports](../modules.md) / ArrayUtils
 
 # Class: ArrayUtils
 
@@ -47,7 +47,7 @@
 
 #### Defined in
 
-[ArrayUtils.ts:47](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L47)
+[ArrayUtils.ts:46](https://github.com/totalpave/array/blob/507755b/src/ArrayUtils.ts#L46)
 
 ___
 
@@ -57,11 +57,12 @@ ___
 
 Analyzes the differences between two arrays. Outputs an object {left, bilateral, right}
 
-`left` output are items that are exclusive to the left array.
+`left` output are items that are exclusive to the left array. 
 `right` output are items that are exclusive to the right array.
 `bilateral` output are items that exist in both arrays.
 
-**`example`**
+**`Example`**
+
 ```
      let left  = [1, 2, 3, 4, 5, 6];
      let right = [4, 5, 6, 7, 8, 9];
@@ -93,13 +94,13 @@ Analyzes the differences between two arrays. Outputs an object {left, bilateral,
 
 #### Defined in
 
-[ArrayUtils.ts:114](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L114)
+[ArrayUtils.ts:113](https://github.com/totalpave/array/blob/507755b/src/ArrayUtils.ts#L113)
 
 ___
 
 ### group
 
-▸ `Static` **group**<`T`\>(`array`, `groupCallback`): `IDictionary`<`T`[]\>
+▸ `Static` **group**<`T`\>(`array`, `groupCallback`): `Record`<`string`, `T`[]\>
 
 #### Type parameters
 
@@ -116,17 +117,17 @@ ___
 
 #### Returns
 
-`IDictionary`<`T`[]\>
+`Record`<`string`, `T`[]\>
 
 #### Defined in
 
-[ArrayUtils.ts:33](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L33)
+[ArrayUtils.ts:32](https://github.com/totalpave/array/blob/507755b/src/ArrayUtils.ts#L32)
 
 ___
 
 ### map
 
-▸ `Static` **map**<`T`, `TK`\>(`array`, `key`): `IDictionary`<`T`\>
+▸ `Static` **map**<`T`, `TK`\>(`array`, `key`): `Record`<`string`, `T`\>
 
 Returns an `IDictionary<T>` object keyed by the supplied key parameter.
 
@@ -138,7 +139,7 @@ string or a number.
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends `IDictionary`<`any`, `T`\> = `IDictionary`<`any`\> |
+| `T` | extends `Record`<`string`, `any`\> = `Record`<`string`, `any`\> |
 | `TK` | extends `string` \| `number` \| `symbol` = keyof `T` |
 
 #### Parameters
@@ -150,11 +151,11 @@ string or a number.
 
 #### Returns
 
-`IDictionary`<`T`\>
+`Record`<`string`, `T`\>
 
 #### Defined in
 
-[ArrayUtils.ts:69](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L69)
+[ArrayUtils.ts:68](https://github.com/totalpave/array/blob/507755b/src/ArrayUtils.ts#L68)
 
 ___
 
@@ -175,7 +176,7 @@ ___
 
 #### Defined in
 
-[ArrayUtils.ts:21](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L21)
+[ArrayUtils.ts:20](https://github.com/totalpave/array/blob/507755b/src/ArrayUtils.ts#L20)
 
 ___
 
@@ -202,4 +203,4 @@ ___
 
 #### Defined in
 
-[ArrayUtils.ts:154](https://github.com/totalpave/array/blob/afdff9d/src/ArrayUtils.ts#L154)
+[ArrayUtils.ts:153](https://github.com/totalpave/array/blob/507755b/src/ArrayUtils.ts#L153)

@@ -1,6 +1,6 @@
-[@totalpave/array - v3.0.1](README.md) / Exports
+[@totalpave/array - v4.0.0](README.md) / Exports
 
-# @totalpave/array - v3.0.1
+# @totalpave/array - v4.0.0
 
 ## Table of contents
 
@@ -17,12 +17,12 @@
 
 - [IArrayDiff](interfaces/IArrayDiff.md)
 
-### Type aliases
+### Type Aliases
 
 - [IAsyncSortFunction](modules.md#iasyncsortfunction)
 - [ISortFunction](modules.md#isortfunction)
 
-## Type aliases
+## Type Aliases
 
 ### IAsyncSortFunction
 
@@ -51,7 +51,7 @@
 
 #### Defined in
 
-[ArraySort.ts:17](https://github.com/totalpave/array/blob/afdff9d/src/ArraySort.ts#L17)
+[ArraySort.ts:17](https://github.com/totalpave/array/blob/507755b/src/ArraySort.ts#L17)
 
 ___
 
@@ -94,4 +94,4 @@ This is a class to take advantage of generic types declarations.
 
 #### Defined in
 
-[ArraySort.ts:16](https://github.com/totalpave/array/blob/afdff9d/src/ArraySort.ts#L16)
+[ArraySort.ts:16](https://github.com/totalpave/array/blob/507755b/src/ArraySort.ts#L16)
