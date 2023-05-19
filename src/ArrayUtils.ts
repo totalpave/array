@@ -110,7 +110,7 @@ export class ArrayUtils {
      * @param left 
      * @param right 
      */
-    public static diff<T = any>(left: Array<T>, right: Array<T>): IArrayDiff {
+    public static diff<T = any>(left: Array<T>, right: Array<T>): IArrayDiff<T> {
         let leftUnique: Array<T> = [];
         let rightUnique: Array<T> = [];
         let bilateral: Array<T> = [];
