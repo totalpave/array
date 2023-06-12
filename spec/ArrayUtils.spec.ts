@@ -307,4 +307,95 @@ describe('ArrayUtils', () => {
         expect(list[2]).toBe(2);
         expect(list[3]).toBe(3);
     });
+
+    describe('flatten', () => {
+        let originalFlatAPI: any = Array.prototype.flat;
+
+        describe('polyfill', () => {
+            beforeAll(() => {
+                Array.prototype.flat = <any>undefined;
+            });
+            afterAll(() => {
+                Array.prototype.flat = originalFlatAPI;
+            });
+
+            it('return empty array if input is not an array', () => {
+                let source: any = 123;
+                expect(ArrayUtils.flatten(source)).toEqual([]);
+            });
+
+            describe('[1,2,3,[4,5]] -> [1,2,3,4,5]', () => {
+                let source = [
+                    1,
+                    2,
+                    3,
+                    [ 4, 5 ]
+                ];
+
+                let result = ArrayUtils.flatten(source);
+
+                it('polyfill', () => {
+                    expect(result).toEqual([
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ]);
+                });
+
+                it('matches standard feature', () => {
+                    expect(result).toEqual(originalFlatAPI.call(source));
+                });
+            });
+
+            describe('[1,2,3,[[4,5]]] -> [1,2,3,[4,5]]', () => {
+                let source = [
+                    1,
+                    2,
+                    3,
+                    [ [ 4, 5 ] ]
+                ];
+
+                let result = ArrayUtils.flatten(source);
+
+                it('polyfill', () => {
+                    expect(result).toEqual([
+                        1,
+                        2,
+                        3,
+                        [ 4, 5 ]
+                    ]);
+                });
+
+                it('matches standard feature', () => {
+                    expect(result).toEqual(originalFlatAPI.call(source));
+                });
+            });
+
+            describe('[1,2,3,[[4,5]]] -> [1,2,3,4,5]', () => {
+                let source = [
+                    1,
+                    2,
+                    3,
+                    [ [ 4, 5 ] ]
+                ];
+                let result = ArrayUtils.flatten(source, Infinity);
+
+                it('polyfill', () => {
+                    expect(result).toEqual([
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ]);
+                });
+
+                it('matches standard feature', () => {
+                    expect(result).toEqual(originalFlatAPI.call(source, Infinity));
+                });
+            });
+        });
+    });
 });

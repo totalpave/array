@@ -159,4 +159,43 @@ export class ArrayUtils {
     
         return list;
     }
+
+    /**
+     * Flattens an array without modifying the given array.
+     * 
+     * Only elements that is an instance of Array will be flatten.
+     * 
+     * Uses the native `flat` API if it's available.
+     * 
+     * Example
+     * [1,2,3,[4,5]] -> [1,2,3,4,5]
+     * @param */
+    public static flatten(inArray: Array<any>, depth: number = 1): Array<any> {
+        if (inArray.flat) {
+            return inArray.flat(depth);
+        }
+
+        if (!inArray || (inArray && inArray.length === 0) || (!(inArray instanceof Array))) {
+            return [];
+        }
+
+        let outArray: Array<any> = [];
+        let currentDepth: number = 0;
+
+        this.$flattenAlgorithm(outArray, inArray, currentDepth, depth);
+
+        return outArray;
+    }
+
+    private static $flattenAlgorithm(outArray: Array<any>, inArray: Array<any>, currentDepth: number, maxDepth: number): void {
+        for (let i: number = 0; i < inArray.length; i++) {
+            let item: any = inArray[i];
+            if (item instanceof Array && currentDepth <= maxDepth) {
+                this.$flattenAlgorithm(outArray, item, currentDepth + 1, maxDepth);
+            }
+            else {
+                outArray.push(item);
+            }
+        }
+    }
 }
