@@ -3,22 +3,22 @@ export interface IArrayDiff<T = any> {
     /**
      * Items that only appear in the left array
      */
-    left: Array<T>;
+    left: T[];
 
     /**
      * Items that appear in both arrays
      */
-    bilateral: Array<T>;
+    bilateral: T[];
 
     /**
      * Items that only appear in the right array
      */
-    right: Array<T>;
+    right: T[];
 }
 
 export class ArrayUtils {
-    public static numericalSort(array: Array<number>, descending?: boolean): Array<number> {
-        let output: Array<number> = array.slice();
+    public static numericalSort(array: number[], descending?: boolean): number[] {
+        let output: number[] = array.slice();
         return output.sort((a: number, b: number) => {
             if (descending) {
                 return b - a;
@@ -29,8 +29,8 @@ export class ArrayUtils {
         });
     }
 
-    public static group<T = any>(array: Array<T>, groupCallback: (value: T) => string|number): Record<string, Array<T>> {
-        let map: Record<string, Array<T>> = {};
+    public static group<T = any>(array: T[], groupCallback: (value: T) => string|number): Record<string, T[]> {
+        let map: Record<string, T[]> = {};
         
         array.forEach((value: T) => {
             let groupByValue: string|number = groupCallback(value);
@@ -43,8 +43,8 @@ export class ArrayUtils {
         return map;
     }
 
-    public static dedupe<T = any>(array: Array<T>): Array<T> {
-        let t: Array<T> = [];
+    public static dedupe<T = any>(array: T[]): T[] {
+        let t: T[] = [];
 
         for (let i: number = 0; i < array.length; i++) {
             if (t.indexOf(array[i]) === -1) {
@@ -65,7 +65,7 @@ export class ArrayUtils {
      * @param array 
      * @param key 
      */
-    public static map<T extends Record<string, any> = Record<string, any>, TK extends keyof T = keyof T>(array: Array<T>, key: TK): Record<string, T> {
+    public static map<T extends Record<string, any> = Record<string, any>, TK extends keyof T = keyof T>(array: T[], key: TK): Record<string, T> {
         let map: Record<string, T> = {};
 
         for (let i: number = 0; i < array.length; i++) {
@@ -110,10 +110,10 @@ export class ArrayUtils {
      * @param left 
      * @param right 
      */
-    public static diff<T = any>(left: Array<T>, right: Array<T>): IArrayDiff<T> {
-        let leftUnique: Array<T> = [];
-        let rightUnique: Array<T> = [];
-        let bilateral: Array<T> = [];
+    public static diff<T = any>(left: T[], right: T[]): IArrayDiff {
+        let leftUnique: T[] = [];
+        let rightUnique: T[] = [];
+        let bilateral: T[] = [];
 
         for (let i: number = 0; i < left.length; i++) {
             let value: T = left[i];
@@ -150,7 +150,7 @@ export class ArrayUtils {
         };
     }
 
-    public static removeAllInstancesInList<T = any>(item: T, list: Array<T>): Array<T> {
+    public static removeAllInstancesInList<T = any>(item: T, list: T[]): T[] {
         list = list.slice();
         
         while (list.indexOf(item) > -1) {
@@ -170,7 +170,7 @@ export class ArrayUtils {
      * Example
      * [1,2,3,[4,5]] -> [1,2,3,4,5]
      * @param */
-    public static flatten(inArray: Array<any>, depth: number = 1): Array<any> {
+    public static flatten(inArray: any[], depth: number = 1): any[] {
         if (inArray.flat) {
             return inArray.flat(depth);
         }
@@ -179,7 +179,7 @@ export class ArrayUtils {
             return [];
         }
 
-        let outArray: Array<any> = [];
+        let outArray: any[] = [];
         let currentDepth: number = 0;
 
         this.$flattenAlgorithm(outArray, inArray, currentDepth, depth);
@@ -187,7 +187,7 @@ export class ArrayUtils {
         return outArray;
     }
 
-    private static $flattenAlgorithm(outArray: Array<any>, inArray: Array<any>, currentDepth: number, maxDepth: number): void {
+    private static $flattenAlgorithm(outArray: any[], inArray: any[], currentDepth: number, maxDepth: number): void {
         for (let i: number = 0; i < inArray.length; i++) {
             let item: any = inArray[i];
             if (item instanceof Array && currentDepth <= maxDepth) {

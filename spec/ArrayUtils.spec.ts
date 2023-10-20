@@ -3,7 +3,7 @@ import {ArrayUtils} from '../src/ArrayUtils';
 
 describe('ArrayUtils', () => {
     describe('deduping', () => {
-        let arr: Array<number> = [
+        let arr: number[] = [
             1,
             1,
             2,
@@ -15,7 +15,7 @@ describe('ArrayUtils', () => {
             3
         ];
 
-        let expectation: Array<number> = [
+        let expectation: number[] = [
             1,
             2,
             3
@@ -27,7 +27,7 @@ describe('ArrayUtils', () => {
     });
 
     describe('sorting', () => {
-        let arr: Array<number> = [
+        let arr: number[] = [
             4,
             1,
             -1,
@@ -36,7 +36,7 @@ describe('ArrayUtils', () => {
             10
         ];
     
-        let expectation: Array<number> = [
+        let expectation: number[] = [
             -1,
             1,
             3,
@@ -60,7 +60,7 @@ describe('ArrayUtils', () => {
             value: number;
         }
 
-        let arr: Array<ITestData> = [
+        let arr: ITestData[] = [
             {
                 distressID: 1,
                 value: 1
@@ -99,7 +99,7 @@ describe('ArrayUtils', () => {
             }
         ];
 
-        let expectation: Record<string, Array<ITestData>> = {
+        let expectation: Record<string, ITestData[]> = {
             1: [
                 {
                     distressID: 1,
@@ -224,13 +224,13 @@ describe('ArrayUtils', () => {
 
     describe('diff', () => {
         it('completely unique', () => {
-            let left: Array<number> = [
+            let left: number[] = [
                 1,
                 2,
                 3
             ];
 
-            let right: Array<number> = [
+            let right: number[] = [
                 4,
                 5,
                 6
@@ -252,7 +252,7 @@ describe('ArrayUtils', () => {
         });
 
         it('bilateral', () => {
-            let left: Array<number> = [
+            let left: number[] = [
                 1,
                 2,
                 3,
@@ -261,7 +261,7 @@ describe('ArrayUtils', () => {
                 6
             ];
 
-            let right: Array<number> = [
+            let right: number[] = [
                 4,
                 5,
                 6,
