@@ -153,7 +153,7 @@ describe('ArrayUtils', () => {
 
     describe('map', () => {
         it('should convert array to map', () => {
-            let arr: Array<Record<string, any>> = [
+            let arr: Record<string, any>[] = [
                 {
                     id: 1,
                     name: 'Test'
@@ -177,7 +177,7 @@ describe('ArrayUtils', () => {
         });
 
         it('should call function if key value is function', () => {
-            let arr: Array<Record<string, any>> = [
+            let arr: Record<string, any>[] = [
                 {
                     getID: function() {
                         return 1;
@@ -205,7 +205,7 @@ describe('ArrayUtils', () => {
         })
 
         it('should error if there are duplicate keys', () => {
-            let arr: Array<Record<string, any>> = [
+            let arr: Record<string, any>[] = [
                 {
                     id: 1,
                     name: 'Test'

@@ -17,7 +17,7 @@ export type ISortFunction<T> = (a: T, b: T) => number;
 export type IAsyncSortFunction<T> = (a: T, b: T) => Promise<number>;
 
 export class ArraySort<T> {
-    public sort(array: T[], sortFunctions: Array<ISortFunction<T>>): T[] {
+    public sort(array: T[], sortFunctions: ISortFunction<T>[]): T[] {
         let sorted: T[] = array.slice();
 
         sorted = sorted.sort((a: T, b: T): number => {
@@ -35,7 +35,7 @@ export class ArraySort<T> {
         return sorted;
     }
 
-    public bubble(arr: T[], sortFunctions: Array<ISortFunction<T>>): T[] {
+    public bubble(arr: T[], sortFunctions: ISortFunction<T>[]): T[] {
         let hasSwapped: boolean = false;
 
         let array: T[] = arr.slice();
@@ -61,7 +61,7 @@ export class ArraySort<T> {
         return array;
     }
 
-    public insertion(arr: T[], sortFunctions: Array<ISortFunction<T>>): T[] {
+    public insertion(arr: T[], sortFunctions: ISortFunction<T>[]): T[] {
         let array: T[] = arr.slice();
 
         for (let outer: number = 1; outer < array.length; outer++) {
@@ -82,7 +82,7 @@ export class ArraySort<T> {
         return array;
     }
 
-    public merge(arr: T[], sortFunctions: Array<ISortFunction<T>>): T[] {
+    public merge(arr: T[], sortFunctions: ISortFunction<T>[]): T[] {
         let array: T[] = arr.slice();
         
         if (array.length < 2) {
@@ -96,7 +96,7 @@ export class ArraySort<T> {
         return this.$mergeSort(this.merge(left, sortFunctions), this.merge(right, sortFunctions), sortFunctions);
     }
 
-    private $mergeSort(left: T[], right: T[], sortFunctions: Array<ISortFunction<T>>): T[] {
+    private $mergeSort(left: T[], right: T[], sortFunctions: ISortFunction<T>[]): T[] {
         let sorted: T[] = [];
 
         while (left.length && right.length) {
@@ -121,7 +121,7 @@ export class ArraySort<T> {
         ];
     }
 
-    public quick(arr: T[], sortFunctions: Array<ISortFunction<T>>): T[] {
+    public quick(arr: T[], sortFunctions: ISortFunction<T>[]): T[] {
         let array: T[] = arr.slice();
 
         if (array.length < 2) {
@@ -155,11 +155,11 @@ export class ArraySort<T> {
         ];
     }
 
-    public async asyncSort(array: T[], sortFunctions: Array<IAsyncSortFunction<T>>): Promise<T[]> {
+    public async asyncSort(array: T[], sortFunctions: IAsyncSortFunction<T>[]): Promise<T[]> {
         return this.asyncQuick(array, sortFunctions);
     }
 
-    public async asyncBubble(arr: T[], sortFunctions: Array<IAsyncSortFunction<T>>): Promise<T[]> {
+    public async asyncBubble(arr: T[], sortFunctions: IAsyncSortFunction<T>[]): Promise<T[]> {
         let hasSwapped: boolean = false;
 
         let array: T[] = arr.slice();
@@ -185,7 +185,7 @@ export class ArraySort<T> {
         return array;
     }
 
-    public async asyncInsertion(arr: T[], sortFunctions: Array<IAsyncSortFunction<T>>): Promise<T[]> {
+    public async asyncInsertion(arr: T[], sortFunctions: IAsyncSortFunction<T>[]): Promise<T[]> {
         let array: T[] = arr.slice();
 
         for (let outer: number = 1; outer < array.length; outer++) {
@@ -206,7 +206,7 @@ export class ArraySort<T> {
         return array;
     }
 
-    public async asyncMerge(arr: T[], sortFunctions: Array<IAsyncSortFunction<T>>): Promise<T[]> {
+    public async asyncMerge(arr: T[], sortFunctions: IAsyncSortFunction<T>[]): Promise<T[]> {
         let array: T[] = arr.slice();
         
         if (array.length < 2) {
@@ -221,7 +221,7 @@ export class ArraySort<T> {
         return this.$asyncMergeSort(results[0], results[1], sortFunctions);
     }
 
-    private async $asyncMergeSort(left: T[], right: T[], sortFunctions: Array<IAsyncSortFunction<T>>): Promise<T[]> {
+    private async $asyncMergeSort(left: T[], right: T[], sortFunctions: IAsyncSortFunction<T>[]): Promise<T[]> {
         let sorted: T[] = [];
 
         while (left.length && right.length) {
@@ -246,7 +246,7 @@ export class ArraySort<T> {
         ];
     }
 
-    public async asyncQuick(arr: T[], sortFunctions: Array<IAsyncSortFunction<T>>): Promise<T[]> {
+    public async asyncQuick(arr: T[], sortFunctions: IAsyncSortFunction<T>[]): Promise<T[]> {
         let array: T[] = arr.slice();
 
         if (array.length < 2) {
