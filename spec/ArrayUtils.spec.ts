@@ -179,13 +179,13 @@ describe('ArrayUtils', () => {
         it('should call function if key value is function', () => {
             let arr: Record<string, any>[] = [
                 {
-                    getID: function() {
+                    getID: function(): number {
                         return 1;
                     },
                     name: 'Test'
                 },
                 {
-                    getID: function() {
+                    getID: function(): number {
                         return 2;
                     },
                     name: 'test2'
@@ -313,7 +313,7 @@ describe('ArrayUtils', () => {
 
         describe('polyfill', () => {
             beforeAll(() => {
-                Array.prototype.flat = <any>undefined;
+                Array.prototype.flat = undefined as any;
             });
             afterAll(() => {
                 Array.prototype.flat = originalFlatAPI;
