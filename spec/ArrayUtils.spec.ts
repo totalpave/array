@@ -218,7 +218,7 @@ describe('ArrayUtils', () => {
 
             expect(() => {
                 ArrayUtils.map(arr, 'id');
-            }).toThrowError(/Encountered duplicate key/);
+            }).toThrow(/Encountered duplicate key/);
         });
     });
 
